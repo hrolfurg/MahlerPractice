@@ -3,3 +3,4 @@ app/mp3/
 __pycache__/
 *.pyc
 .env
+!.env.example

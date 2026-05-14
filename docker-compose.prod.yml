@@ -1,0 +1,17 @@
+services:
+  mahler:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./mp3:/app/mp3:ro
+    # Port is intentionally not exposed to the host in production.
+    # All traffic arrives through the cloudflared tunnel on the internal network.
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    env_file: .env
+    depends_on:
+      - mahler

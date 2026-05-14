@@ -8,10 +8,10 @@ from flask import (
 )
 
 app = Flask(__name__)
-app.secret_key = "mh8-practice-secret-2024-xQ7pL"
+app.secret_key = os.environ.get("FLASK_SECRET_KEY", "mh8-practice-secret-2024-xQ7pL")
 
-USERNAME = "mahler"
-PASSWORD = "mahler"
+USERNAME = os.environ.get("APP_USERNAME", "mahler")
+PASSWORD = os.environ.get("APP_PASSWORD", "mahler")
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "voices.csv")
 MP3_DIR = os.path.join(os.path.dirname(__file__), "mp3")
