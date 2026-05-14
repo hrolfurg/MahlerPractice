@@ -26,7 +26,7 @@ Without a dedicated tool, distributing these files is a logistical headache: sha
 | Container | Docker + docker-compose |
 | Reverse proxy | Cloudflare Tunnel |
 
-## Running it
+## Local development
 
 Requires Docker Desktop. Place your MP3 files in the `mp3/` folder at the project root, then:
 
@@ -36,6 +36,44 @@ make logs      # tail live output
 make down      # stop
 ```
 
-Open `http://localhost:8080` and log in with the shared credentials. For internet access, point a Cloudflare Tunnel at `localhost:8080`.
+Open `http://localhost:8080` and log in with the shared credentials.
+
+## Production setup
+
+Production runs two containers — the app and a Cloudflare tunnel — with all secrets in a `.env` file. Port 8080 is not exposed to the host; the only entry point is the encrypted tunnel.
+
+### 1. Create the `.env` file
+
+```sh
+cp .env.example .env
+```
+
+Edit `.env` and fill in the three values:
+
+| Variable | Description |
+|---|---|
+| `FLASK_SECRET_KEY` | Random string used to sign session cookies. Generate with `python -c "import secrets; print(secrets.token_hex(32))"` |
+| `APP_USERNAME` | Login username shown to singers |
+| `APP_PASSWORD` | Login password shown to singers |
+| `TUNNEL_TOKEN` | Cloudflare Tunnel token (see below) |
+
+### 2. Create a Cloudflare Tunnel
+
+1. Go to [Cloudflare Zero Trust](https://one.dash.cloudflare.com) → **Networks → Tunnels → Create a tunnel**
+2. Name it (e.g. `mahler`) and save
+3. Under **Public Hostnames**, add a hostname (e.g. `mahler.yourdomain.com`) and set the service URL to `http://mahler:8080` — this is the app's name on the internal Docker network
+4. On the connector page, copy the tunnel token and paste it into `.env` as `TUNNEL_TOKEN`
+
+### 3. Start
+
+```sh
+make prod-up      # build and start app + cloudflared
+make prod-logs    # watch both containers
+make prod-down    # stop everything
+```
+
+The site will be live at your configured hostname over HTTPS. Cloudflare handles TLS termination automatically.
+
+---
 
 See `CLAUDE.md` for a full description of the code architecture.
