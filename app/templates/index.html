@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mahler 8 – Practice Tracks</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f4f6fb; }
+
+    /* Sticky top bar: navbar + player */
+    .sticky-top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      background: #16213e;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .site-navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .site-navbar .brand {
+      color: #e2c97e;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+    .site-navbar .subtitle {
+      color: #8899bb;
+      font-size: 0.78rem;
+      margin-left: 0.5rem;
+    }
+
+    .player-bar {
+      padding: 0.6rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .player-bar #now-playing {
+      color: #c0cfe8;
+      font-size: 0.82rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 360px;
+      flex-shrink: 1;
+    }
+    audio {
+      flex: 1;
+      min-width: 0;
+      height: 36px;
+    }
+
+    /* Filter card */
+    .filter-card {
+      background: #fff;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1rem 1.25rem;
+    }
+    .filter-card label { font-size: 0.85rem; font-weight: 600; color: #444; }
+
+    /* Results */
+    .results-header {
+      font-size: 0.85rem;
+      color: #667;
+    }
+    .track-table th {
+      background: #16213e;
+      color: #e2c97e;
+      font-size: 0.82rem;
+      white-space: nowrap;
+      border: none;
+    }
+    .track-table td {
+      font-size: 0.88rem;
+      vertical-align: middle;
+      border-color: #e8ecf2;
+    }
+    .track-table tbody tr.part-i  { background: #f0f4ff; }
+    .track-table tbody tr.part-ii { background: #f5f0ff; }
+    .track-table tbody tr:hover { background: #dde8ff; cursor: default; }
+    .track-table tr.playing { background: #fff3cd !important; }
+    .btn-play {
+      padding: 0.2rem 0.75rem;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    .badge-voice { font-size: 0.75rem; }
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Sticky top bar ─────────────────────────────────────────── -->
+<div class="sticky-top-bar">
+  <div class="site-navbar">
+    <div>
+      <span class="brand">Mahler Symphony No. 8</span>
+      <span class="subtitle">Choir Practice Portal</span>
+    </div>
+    <a href="/logout" class="btn btn-outline-light btn-sm">Sign out</a>
+  </div>
+  <div class="player-bar">
+    <span id="now-playing">No track selected</span>
+    <audio id="player" controls></audio>
+    <div class="d-flex align-items-center gap-1 flex-shrink-0">
+      <span style="color:#8899bb;font-size:0.75rem;white-space:nowrap;">Speed</span>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Playback speed">
+        <button class="btn btn-outline-light speed-btn" data-rate="0.5">½×</button>
+        <button class="btn btn-outline-light speed-btn" data-rate="0.75">¾×</button>
+        <button class="btn btn-outline-light speed-btn active" data-rate="1">1×</button>
+        <button class="btn btn-outline-light speed-btn" data-rate="1.25">1¼×</button>
+        <button class="btn btn-outline-light speed-btn" data-rate="1.5">1½×</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main content ───────────────────────────────────────────── -->
+<div class="container-fluid py-3 px-3 px-md-4">
+
+  <!-- Filter card -->
+  <div class="filter-card mb-3">
+    <div class="row g-3 align-items-end">
+
+      <!-- Part filter -->
+      <div class="col-12 col-sm-auto">
+        <label class="d-block mb-1">Part</label>
+        <div class="btn-group" role="group" aria-label="Part filter">
+          <input type="radio" class="btn-check" name="partFilter" id="partAll" value="" checked>
+          <label class="btn btn-outline-secondary btn-sm" for="partAll">All</label>
+
+          <input type="radio" class="btn-check" name="partFilter" id="partI" value="Part I">
+          <label class="btn btn-outline-secondary btn-sm" for="partI">Part I</label>
+
+          <input type="radio" class="btn-check" name="partFilter" id="partII" value="Part II">
+          <label class="btn btn-outline-secondary btn-sm" for="partII">Part II</label>
+        </div>
+      </div>
+
+      <!-- Choir filter -->
+      <div class="col-6 col-sm-auto">
+        <label for="choirFilter" class="d-block mb-1">Choir</label>
+        <select id="choirFilter" class="form-select form-select-sm" style="min-width:140px;">
+          <option value="">All choirs</option>
+        </select>
+      </div>
+
+      <!-- Voice filter -->
+      <div class="col-6 col-sm-auto">
+        <label for="voiceFilter" class="d-block mb-1">Voice</label>
+        <select id="voiceFilter" class="form-select form-select-sm" style="min-width:130px;">
+          <option value="">All voices</option>
+          <option value="Soprano">Soprano</option>
+          <option value="Alto">Alto</option>
+          <option value="Tenor">Tenor</option>
+          <option value="Bass">Bass</option>
+        </select>
+      </div>
+
+      <!-- Voice Type filter -->
+      <div class="col-6 col-sm-auto">
+        <label for="voiceTypeFilter" class="d-block mb-1">Voice Type</label>
+        <select id="voiceTypeFilter" class="form-select form-select-sm" style="min-width:150px;">
+          <option value="">All types</option>
+        </select>
+      </div>
+
+      <!-- Reset -->
+      <div class="col-auto ms-sm-auto">
+        <button id="resetBtn" class="btn btn-outline-danger btn-sm">Reset filters</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Results count + table -->
+  <div class="results-header mb-2" id="resultsCount"></div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover track-table" id="trackTable">
+      <thead>
+        <tr>
+          <th>Voice</th>
+          <th>Choir</th>
+          <th>Voice Type</th>
+          <th>Part</th>
+          <th>Section (bars)</th>
+          <th>Play</th>
+        </tr>
+      </thead>
+      <tbody id="trackBody"></tbody>
+    </table>
+  </div>
+  <div id="emptyState" class="empty-state d-none">
+    <p class="mb-0">No tracks match the current filters.</p>
+  </div>
+
+</div><!-- /container -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const ALL_TRACKS = {{ track_data | safe }};
+
+/* ── Populate choir dropdown from data ── */
+const choirs = [...new Set(ALL_TRACKS.map(t => t.choir).filter(Boolean))].sort();
+const choirSel = document.getElementById("choirFilter");
+choirs.forEach(c => {
+  const o = document.createElement("option");
+  o.value = c; o.textContent = c;
+  choirSel.appendChild(o);
+});
+
+/* ── Populate/update voice type dropdown (cascades from voice filter) ── */
+const voiceTypeSel = document.getElementById("voiceTypeFilter");
+
+function refreshVoiceTypes() {
+  const voice = document.getElementById("voiceFilter").value;
+  const current = voiceTypeSel.value;
+
+  const types = [...new Set(
+    ALL_TRACKS
+      .filter(t => !voice || t.voice === voice)
+      .map(t => t.voice_type)
+      .filter(Boolean)
+  )].sort();
+
+  voiceTypeSel.innerHTML = '<option value="">All types</option>';
+  types.forEach(vt => {
+    const o = document.createElement("option");
+    o.value = vt; o.textContent = vt;
+    if (vt === current) o.selected = true;
+    voiceTypeSel.appendChild(o);
+  });
+}
+
+refreshVoiceTypes();
+
+/* ── Badge colours per voice ── */
+const VOICE_COLOURS = {
+  Soprano: "primary", Alto: "success", Tenor: "warning", Bass: "danger"
+};
+
+/* ── Render table ── */
+let activeRow = null;
+
+function render() {
+  const part      = document.querySelector('input[name="partFilter"]:checked').value;
+  const voice     = document.getElementById("voiceFilter").value;
+  const choir     = document.getElementById("choirFilter").value;
+  const voiceType = document.getElementById("voiceTypeFilter").value;
+
+  const filtered = ALL_TRACKS.filter(t => {
+    if (part      && t.part       !== part)      return false;
+    if (voice     && t.voice      !== voice)     return false;
+    if (choir     && t.choir      !== choir)     return false;
+    if (voiceType && t.voice_type !== voiceType) return false;
+    return true;
+  });
+
+  const tbody = document.getElementById("trackBody");
+  tbody.innerHTML = "";
+
+  const total = ALL_TRACKS.length;
+  document.getElementById("resultsCount").textContent =
+    `Showing ${filtered.length} of ${total} tracks`;
+
+  const empty = document.getElementById("emptyState");
+  const table = document.getElementById("trackTable");
+
+  if (filtered.length === 0) {
+    empty.classList.remove("d-none");
+    table.classList.add("d-none");
+    return;
+  }
+  empty.classList.add("d-none");
+  table.classList.remove("d-none");
+
+  filtered.forEach((t, idx) => {
+    const tr = document.createElement("tr");
+    tr.dataset.filename = t.filename;
+    tr.classList.add(t.part === "Part I" ? "part-i" : "part-ii");
+
+    const colour = VOICE_COLOURS[t.voice] || "secondary";
+    tr.innerHTML = `
+      <td><span class="badge bg-${colour} badge-voice">${t.voice || "—"}</span></td>
+      <td>${t.choir || "—"}</td>
+      <td>${t.voice_type || "—"}</td>
+      <td>${t.part || "—"}</td>
+      <td>${t.section || "—"}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-dark btn-play" data-file="${t.filename}"
+                data-label="${t.voice} · ${t.choir || '?'} · ${t.voice_type || t.part} · bars ${t.section}">
+          ▶ Play
+        </button>
+      </td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+/* ── Play a track ── */
+const player = document.getElementById("player");
+const nowPlaying = document.getElementById("now-playing");
+
+document.getElementById("trackBody").addEventListener("click", e => {
+  const btn = e.target.closest(".btn-play");
+  if (!btn) return;
+
+  const file  = btn.dataset.file;
+  const label = btn.dataset.label;
+
+  /* Highlight row */
+  document.querySelectorAll(".track-table tr.playing").forEach(r => r.classList.remove("playing"));
+  btn.closest("tr").classList.add("playing");
+
+  /* Load and play */
+  player.src = `/mp3/${file}`;
+  nowPlaying.textContent = label;
+  player.play();
+
+  /* Scroll player into view on small screens */
+  document.querySelector(".sticky-top-bar").scrollIntoView({ behavior: "smooth" });
+});
+
+/* ── Playback speed ── */
+const speedBtns = document.querySelectorAll(".speed-btn");
+const savedRate = parseFloat(localStorage.getItem("mahler_speed") || "1");
+player.playbackRate = savedRate;
+speedBtns.forEach(btn => {
+  if (parseFloat(btn.dataset.rate) === savedRate) btn.classList.add("active");
+  else btn.classList.remove("active");
+  btn.addEventListener("click", () => {
+    const rate = parseFloat(btn.dataset.rate);
+    player.playbackRate = rate;
+    localStorage.setItem("mahler_speed", rate);
+    speedBtns.forEach(b => b.classList.toggle("active", b === btn));
+  });
+});
+
+/* ── Persist filters in localStorage ── */
+const STORAGE_KEY = "mahler_filters";
+
+function saveFilters() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    part:      document.querySelector('input[name="partFilter"]:checked').value,
+    voice:     document.getElementById("voiceFilter").value,
+    choir:     document.getElementById("choirFilter").value,
+    voiceType: document.getElementById("voiceTypeFilter").value,
+  }));
+}
+
+function restoreFilters() {
+  let saved;
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (_) {}
+  if (!saved) return;
+
+  const partRadio = document.querySelector(`input[name="partFilter"][value="${saved.part ?? ""}"]`);
+  if (partRadio) partRadio.checked = true;
+  document.getElementById("voiceFilter").value = saved.voice ?? "";
+  document.getElementById("choirFilter").value = saved.choir ?? "";
+  refreshVoiceTypes();
+  document.getElementById("voiceTypeFilter").value = saved.voiceType ?? "";
+}
+
+/* ── Filter controls ── */
+document.querySelectorAll('input[name="partFilter"]').forEach(r =>
+  r.addEventListener("change", () => { saveFilters(); render(); }));
+
+document.getElementById("voiceFilter").addEventListener("change", () => {
+  refreshVoiceTypes();
+  saveFilters();
+  render();
+});
+
+document.getElementById("choirFilter").addEventListener("change", () => { saveFilters(); render(); });
+document.getElementById("voiceTypeFilter").addEventListener("change", () => { saveFilters(); render(); });
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+  document.getElementById("partAll").checked = true;
+  document.getElementById("voiceFilter").value = "";
+  document.getElementById("choirFilter").value = "";
+  refreshVoiceTypes();
+  document.getElementById("voiceTypeFilter").value = "";
+  localStorage.removeItem(STORAGE_KEY);
+  render();
+});
+
+/* ── Restore saved filters then render ── */
+restoreFilters();
+render();
+</script>
+</body>
+</html>

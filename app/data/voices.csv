@@ -1,0 +1,230 @@
+Voice,Choir,Voice type,Part,Section,MP3 filename
+Soprano,choir I,soprano I,Part I,0-6,mh02-1ss1.mp3
+Soprano,choir I,soprano II,Part I,0-6,mh02-1ss2.mp3
+Soprano,choir II,,Part I,0-6,mh02-1ss3.mp3
+Soprano,choir I,,Part I,7-17,mh02-2ss1.mp3
+Soprano,choir II,,Part I,7-17,mh02-2ss2.mp3
+Soprano,choir I,,Part I,19-22,mh02-3ss1.mp3
+Soprano,choir II,soprano I,Part I,19-22,mh02-3ss2.mp3
+Soprano,choir II,soprano II,Part I,19-22,mh02-3ss3.mp3
+Soprano,boys,,Part I,37-41,mh02-4ss1.mp3
+Soprano,choir I,,Part I,37-41,mh02-4ss2.mp3
+Soprano,choir II,,Part I,37-41,mh02-4ss3.mp3
+Soprano,boys,,Part I,41-54,mh02-5ss1.mp3
+Soprano,choir I,,Part I,41-54,mh02-5ss2.mp3
+Soprano,choir II,,Part I,41-54,mh02-5ss3.mp3
+Soprano,boys,,Part I,54-71,mh02-6ss1.mp3
+Soprano,choir I,,Part I,54-71,mh02-6ss2.mp3
+Soprano,choir II,,Part I,54-71,mh02-6ss3.mp3
+Soprano,choir I,,Part I,71-79,mh02-7ss1.mp3
+Soprano,choir II,soprano I,Part I,71-79,mh02-7ss2.mp3
+Soprano,choir II,soprano II,Part I,71-79,mh02-7ss3.mp3
+Soprano,boys,,Part I,83-92,mh02-8ss1.mp3
+Soprano,choir I,soprano I,Part I,83-92,mh02-8ss2.mp3
+Soprano,choir I,soprano II,Part I,83-92,mh02-8ss3.mp3
+Soprano,choir II,soprano I,Part I,83-92,mh02-8ss4.mp3
+Soprano,choir II,soprano II,Part I,83-92,mh02-8ss5.mp3
+Soprano,boys,,Part II,55-60,mh02-22ss1.mp3
+Soprano,choir I,soprano,Part II,55-60,mh02-22ss2.mp3
+Soprano,choir I,,Part II,63-73,mh02-23ss.mp3
+Soprano,choir II,"group I, soprano I",Part II,76-81,mh02-24ss1.mp3
+Soprano,choir II,"group I, soprano II",Part II,76-81,mh02-24ss2.mp3
+Soprano,choir II,group II,Part II,76-81,mh02-24ss3.mp3
+Soprano,boys,,Part II,81-88,mh02-25ss1.mp3
+Soprano,choir I,soprano I,Part II,81-88,mh02-25ss2.mp3
+Soprano,choir I,soprano II,Part II,81-88,mh02-25ss3.mp3
+Soprano,choir I,,Part II,108-116,mh02-27ss1.mp3
+Soprano,choir II,soprano I,Part II,108-116,mh02-27ss2.mp3
+Soprano,choir II,soprano II,Part II,108-116,mh02-27ss3.mp3
+Soprano,boys I,,Part II,154-164,mh02-28ss1.mp3
+Soprano,boys II,,Part II,154-164,mh02-28ss2.mp3
+Soprano,choir II,,Part II,154-164,mh02-28ss3.mp3
+Soprano,,,Part II,174-177,mh02-29ss.mp3
+Soprano,boys I,,Part II,182-185,mh02-30ss1.mp3
+Soprano,boys II,,Part II,182-185,mh02-30ss2.mp3
+Soprano,choir I,,Part II,182-185,mh02-30ss3.mp3
+Soprano,choir II,,Part II,182-185,mh02-30ss4.mp3
+Soprano,choir I,,Part II,187-194,mh02-31ss1.mp3
+Soprano,choir II,,Part II,187-194,mh02-31ss2.mp3
+Soprano,boys,,Part II,202-218,mh02-32ss1.mp3
+Soprano,choir I,soprano I,Part II,202-218,mh02-32ss2.mp3
+Soprano,choir I,soprano II,Part II,202-218,mh02-32ss3.mp3
+Soprano,choir II,soprano I,Part II,202-218,mh02-32ss4.mp3
+Soprano,choir II,soprano II,Part II,202-218,mh02-32ss5.mp3
+Alto,choir I,alto I,Part I,0-6,mh02-1as1.mp3
+Alto,choir I,alto II,Part I,0-6,mh02-1as2.mp3
+Alto,choir II,alto I,Part I,0-6,mh02-1as3.mp3
+Alto,choir II,alto II,Part I,0-6,mh02-1as4.mp3
+Alto,choir I,alto I,Part I,7-17,mh02-2as1.mp3
+Alto,choir I,alto II,Part I,7-17,mh02-2as2.mp3
+Alto,choir II,,Part I,7-17,mh02-2as3.mp3
+Alto,choir I,alto I,Part I,19-22,mh02-3as1.mp3
+Alto,choir I,alto II,Part I,19-22,mh02-3as2.mp3
+Alto,choir II,alto I,Part I,19-22,mh02-3as3.mp3
+Alto,choir II,alto II,Part I,19-22,mh02-3as4.mp3
+Alto,choir I,alto I,Part I,37-41,mh02-4as1.mp3
+Alto,choir I,alto II,Part I,37-41,mh02-4as2.mp3
+Alto,choir II,alto I,Part I,37-41,mh02-4as3.mp3
+Alto,choir II,alto II,Part I,37-41,mh02-4as4.mp3
+Alto,choir I,alto I,Part I,41-54,mh02-5as1.mp3
+Alto,choir I,alto II,Part I,41-54,mh02-5as2.mp3
+Alto,choir II,alto I,Part I,41-54,mh02-5as3.mp3
+Alto,choir II,alto II,Part I,41-54,mh02-5as4.mp3
+Alto,choir I,alto I,Part I,54-71,mh02-6as1.mp3
+Alto,choir I,alto II,Part I,54-71,mh02-6as2.mp3
+Alto,choir II,alto I,Part I,54-71,mh02-6as3.mp3
+Alto,choir II,alto II,Part I,54-71,mh02-6as4.mp3
+Alto,choir I,alto I,Part I,71-79,mh02-7as1.mp3
+Alto,choir I,alto II,Part I,71-79,mh02-7as2.mp3
+Alto,choir II,alto I,Part I,71-79,mh02-7as3.mp3
+Alto,choir II,alto II,Part I,71-79,mh02-7as4.mp3
+Alto,choir I,alto I,Part I,83-92,mh02-8as1.mp3
+Alto,choir I,alto II,Part I,83-92,mh02-8as2.mp3
+Alto,choir II,alto I,Part I,83-92,mh02-8as3.mp3
+Alto,choir II,alto II,Part I,83-92,mh02-8as4.mp3
+Alto,choir I,alto I,Part II,24-31,mh02-21as1.mp3
+Alto,choir I,alto II,Part II,24-31,mh02-21as2.mp3
+Alto,choir I,,Part II,55-60,mh02-22as.mp3
+Alto,choir I,alto I,Part II,63-73,mh02-23as1.mp3
+Alto,choir I,alto II,Part II,63-73,mh02-23as2.mp3
+Alto,choir II,"group I, alto I",Part II,76-81,mh02-24as1.mp3
+Alto,choir II,"group I, alto II",Part II,76-81,mh02-24as2.mp3
+Alto,choir II,"group II, alto I",Part II,76-81,mh02-24as3.mp3
+Alto,choir II,"group II, alto II",Part II,76-81,mh02-24as4.mp3
+Alto,choir I,alto I,Part II,81-88,mh02-25as1.mp3
+Alto,choir I,alto II,Part II,81-88,mh02-25as2.mp3
+Alto,choir I,alto III,Part II,81-88,mh02-25as3.mp3
+Alto,choir I,,Part II,99-103,mh02-26as1.mp3
+Alto,choir II,,Part II,99-103,mh02-26as2.mp3
+Alto,choir I,,Part II,108-116,mh02-27as1.mp3
+Alto,choir II,alto I,Part II,108-116,mh02-27as2.mp3
+Alto,choir II,alto II,Part II,108-116,mh02-27as3.mp3
+Alto,,,Part II,174-177,mh02-29as.mp3
+Alto,choir I,alto I,Part II,182-185,mh02-30as1.mp3
+Alto,choir I,alto II,Part II,182-185,mh02-30as2.mp3
+Alto,choir II,,Part II,182-185,mh02-30as3.mp3
+Alto,choir I,alto I,Part II,187-194,mh02-31as1.mp3
+Alto,choir I,alto II,Part II,187-194,mh02-31as2.mp3
+Alto,choir II,alto I,Part II,187-194,mh02-31as3.mp3
+Alto,choir II,alto II,Part II,187-194,mh02-31as4.mp3
+Alto,choir I,alto I,Part II,202-218,mh02-32as1.mp3
+Alto,choir I,alto II,Part II,202-218,mh02-32as2.mp3
+Alto,choir II,alto I,Part II,202-218,mh02-32as3.mp3
+Alto,choir II,alto II,Part II,202-218,mh02-32as4.mp3
+Tenor,choir I,tenor I,Part I,0-6,mh02-1ts1.mp3
+Tenor,choir I,tenor II,Part I,0-6,mh02-1ts2.mp3
+Tenor,choir II,tenor I,Part I,0-6,mh02-1ts3.mp3
+Tenor,choir II,tenor II,Part I,0-6,mh02-1ts4.mp3
+Tenor,choir I,tenor I,Part I,7-17,mh02-2ts1.mp3
+Tenor,choir I,tenor II,Part I,7-17,mh02-2ts2.mp3
+Tenor,choir II,tenor I,Part I,7-17,mh02-2ts3.mp3
+Tenor,choir II,tenor II,Part I,7-17,mh02-2ts4.mp3
+Tenor,choir I,tenor I,Part I,19-22,mh02-3ts1.mp3
+Tenor,choir I,tenor II,Part I,19-22,mh02-3ts2.mp3
+Tenor,choir II,tenor I,Part I,19-22,mh02-3ts3.mp3
+Tenor,choir II,tenor II,Part I,19-22,mh02-3ts4.mp3
+Tenor,choir I,tenor I,Part I,37-41,mh02-4ts1.mp3
+Tenor,choir I,tenor II,Part I,37-41,mh02-4ts2.mp3
+Tenor,choir II,tenor I,Part I,37-41,mh02-4ts3.mp3
+Tenor,choir II,tenor II,Part I,37-41,mh02-4ts4.mp3
+Tenor,choir I,tenor I,Part I,41-54,mh02-5ts1.mp3
+Tenor,choir I,tenor II,Part I,41-54,mh02-5ts2.mp3
+Tenor,choir II,tenor I,Part I,41-54,mh02-5ts3.mp3
+Tenor,choir II,tenor II,Part I,41-54,mh02-5ts4.mp3
+Tenor,choir I,tenor I,Part I,54-71,mh02-6ts1.mp3
+Tenor,choir I,tenor II,Part I,54-71,mh02-6ts2.mp3
+Tenor,choir II,tenor I,Part I,54-71,mh02-6ts3.mp3
+Tenor,choir II,tenor II,Part I,54-71,mh02-6ts4.mp3
+Tenor,choir I,tenor I,Part I,71-79,mh02-7ts1.mp3
+Tenor,choir I,tenor II,Part I,71-79,mh02-7ts2.mp3
+Tenor,choir II,tenor I,Part I,71-79,mh02-7ts3.mp3
+Tenor,choir II,tenor II,Part I,71-79,mh02-7ts4.mp3
+Tenor,choir I,tenor I,Part I,83-92,mh02-8ts1.mp3
+Tenor,choir I,tenor II,Part I,83-92,mh02-8ts2.mp3
+Tenor,choir II,tenor I,Part I,83-92,mh02-8ts3.mp3
+Tenor,choir II,tenor II,Part I,83-92,mh02-8ts4.mp3
+Tenor,choir I,tenor I,Part II,24-31,mh02-21ts1.mp3
+Tenor,choir I,tenor II,Part II,24-31,mh02-21ts2.mp3
+Tenor,choir I,tenor III,Part II,24-31,mh02-21ts3.mp3
+Tenor,choir II,,Part II,24-31,mh02-21ts4.mp3
+Tenor,choir II,"group I, tenor I",Part II,76-81,mh02-24ts1.mp3
+Tenor,choir II,"group I, tenor II",Part II,76-81,mh02-24ts2.mp3
+Tenor,choir II,"group II, tenor I",Part II,76-81,mh02-24ts3.mp3
+Tenor,choir II,"group II, tenor II",Part II,76-81,mh02-24ts4.mp3
+Tenor,choir I,tenor I,Part II,99-103,mh02-26ts1.mp3
+Tenor,choir I,tenor II,Part II,99-103,mh02-26ts2.mp3
+Tenor,choir I,tenor I,Part II,108-116,mh02-27ts1.mp3
+Tenor,choir I,tenor II,Part II,108-116,mh02-27ts2.mp3
+Tenor,choir II,tenor I,Part II,108-116,mh02-27ts3.mp3
+Tenor,choir II,tenor II,Part II,108-116,mh02-27ts4.mp3
+Tenor,,,Part II,174-177,mh02-29ts.mp3
+Tenor,choir I,,Part II,182-185,mh02-30ts1.mp3
+Tenor,choir II,,Part II,182-185,mh02-30ts2.mp3
+Tenor,choir I,tenor I,Part II,187-194,mh02-31ts1.mp3
+Tenor,choir I,tenor II,Part II,187-194,mh02-31ts2.mp3
+Tenor,choir II,tenor I,Part II,187-194,mh02-31ts3.mp3
+Tenor,choir II,tenor II,Part II,187-194,mh02-31ts4.mp3
+Tenor,choir I,tenor I,Part II,202-218,mh02-32ts1.mp3
+Tenor,choir I,tenor II,Part II,202-218,mh02-32ts2.mp3
+Tenor,choir II,tenor I,Part II,202-218,mh02-32ts3.mp3
+Tenor,choir II,tenor II,Part II,202-218,mh02-32ts4.mp3
+Bass,choir I,bass I,Part I,0-6,mh02-1bs1.mp3
+Bass,choir I,bass II,Part I,0-6,mh02-1bs2.mp3
+Bass,choir II,bass I,Part I,0-6,mh02-1bs3.mp3
+Bass,choir II,bass II,Part I,0-6,mh02-1bs4.mp3
+Bass,choir I,,Part I,7-17,mh02-2bs1.mp3
+Bass,choir II,,Part I,7-17,mh02-2bs2.mp3
+Bass,choir I,,Part I,19-22,mh02-3bs1.mp3
+Bass,choir II,bass I,Part I,19-22,mh02-3bs2.mp3
+Bass,choir II,bass II,Part I,19-22,mh02-3bs3.mp3
+Bass,choir I,bass I,Part I,37-41,mh02-4bs1.mp3
+Bass,choir I,bass II,Part I,37-41,mh02-4bs2.mp3
+Bass,choir II,bass I,Part I,37-41,mh02-4bs3.mp3
+Bass,choir II,bass II,Part I,37-41,mh02-4bs4.mp3
+Bass,choir I,bass I,Part I,41-54,mh02-5bs1.mp3
+Bass,choir I,bass II,Part I,41-54,mh02-5bs2.mp3
+Bass,choir I,bass III,Part I,41-54,mh02-5bs3.mp3
+Bass,choir II,bass I,Part I,41-54,mh02-5bs4.mp3
+Bass,choir II,bass II,Part I,41-54,mh02-5bs5.mp3
+Bass,choir II,bass III,Part I,41-54,mh02-5bs6.mp3
+Bass,choir I,bass I,Part I,54-71,mh02-6bs1.mp3
+Bass,choir I,bass II,Part I,54-71,mh02-6bs2.mp3
+Bass,choir II,bass I,Part I,54-71,mh02-6bs3.mp3
+Bass,choir II,bass II,Part I,54-71,mh02-6bs4.mp3
+Bass,choir I,,Part I,71-79,mh02-7bs1.mp3
+Bass,choir II,,Part I,71-79,mh02-7bs2.mp3
+Bass,choir I,bass I,Part I,83-92,mh02-8bs1.mp3
+Bass,choir I,bass II,Part I,83-92,mh02-8bs2.mp3
+Bass,choir II,bass I,Part I,83-92,mh02-8bs3.mp3
+Bass,choir II,bass II,Part I,83-92,mh02-8bs4.mp3
+Bass,choir I,bass I,Part II,24-31,mh02-21bs1.mp3
+Bass,choir I,bass II,Part II,24-31,mh02-21bs2.mp3
+Bass,choir I,bass III,Part II,24-31,mh02-21bs3.mp3
+Bass,choir II,bass I,Part II,24-31,mh02-21bs4.mp3
+Bass,choir II,bass II,Part II,24-31,mh02-21bs5.mp3
+Bass,choir II,bass III,Part II,24-31,mh02-21bs6.mp3
+Bass,choir II,group II,Part II,76-81,mh02-24bs.mp3
+Bass,choir I,bass I,Part II,99-103,mh02-26bs1.mp3
+Bass,choir I,bass II,Part II,99-103,mh02-26bs2.mp3
+Bass,choir I,bass III,Part II,99-103,mh02-26bs3.mp3
+Bass,choir II,bass I,Part II,99-103,mh02-26bs4.mp3
+Bass,choir II,bass II,Part II,99-103,mh02-26bs5.mp3
+Bass,choir II,bass III,Part II,99-103,mh02-26bs6.mp3
+Bass,choir I,bass I,Part II,108-116,mh02-27bs1.mp3
+Bass,choir I,bass II,Part II,108-116,mh02-27bs2.mp3
+Bass,choir II,bass I,Part II,108-116,mh02-27bs3.mp3
+Bass,choir II,bass II,Part II,108-116,mh02-27bs4.mp3
+Bass,choir II,bass III,Part II,108-116,mh02-27bs5.mp3
+Bass,,,Part II,174-177,mh02-29bs.mp3
+Bass,choir I,bass I,Part II,182-185,mh02-30bs1.mp3
+Bass,choir I,bass II,Part II,182-185,mh02-30bs2.mp3
+Bass,choir II,bass I,Part II,182-185,mh02-30bs3.mp3
+Bass,choir II,bass II,Part II,182-185,mh02-30bs4.mp3
+Bass,choir I,bass I,Part II,187-194,mh02-31bs1.mp3
+Bass,choir I,bass II,Part II,187-194,mh02-31bs2.mp3
+Bass,choir II,bass I,Part II,187-194,mh02-31bs3.mp3
+Bass,choir II,bass II,Part II,187-194,mh02-31bs4.mp3
+Bass,choir I,bass I,Part II,202-218,mh02-32bs1.mp3
+Bass,choir I,bass II,Part II,202-218,mh02-32bs2.mp3
+Bass,choir II,bass I,Part II,202-218,mh02-32bs3.mp3
+Bass,choir II,bass II,Part II,202-218,mh02-32bs4.mp3

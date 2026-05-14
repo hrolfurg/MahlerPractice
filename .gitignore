@@ -1,0 +1,5 @@
+mp3/
+app/mp3/
+__pycache__/
+*.pyc
+.env
