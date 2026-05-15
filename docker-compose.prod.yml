@@ -1,10 +1,12 @@
 services:
   mahler:
-    image: hrolfurdocker/mahlerpractice:${APP_VERSION:-latest}
+    image: hrolfurdocker/mahlerpractice:latest
     restart: unless-stopped
     env_file: .env
     volumes:
       - ./mp3:/app/mp3:ro
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
     # Port is intentionally not exposed to the host in production.
     # All traffic arrives through the cloudflared tunnel on the internal network.
 
@@ -15,3 +17,10 @@ services:
     env_file: .env
     depends_on:
       - mahler
+
+  watchtower:
+    image: containrrr/watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --label-enable --cleanup --interval 300
