@@ -1,6 +1,6 @@
 services:
   mahler:
-    image: hrolfurdocker/mahlerpractice:v1.1.0
+    image: hrolfurdocker/mahlerpractice:${APP_VERSION:-latest}
     restart: unless-stopped
     env_file: .env
     volumes:
