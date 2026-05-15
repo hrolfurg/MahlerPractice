@@ -51,8 +51,8 @@ def login():
         return redirect(url_for("index"))
     error = None
     if request.method == "POST":
-        if (request.form.get("username") == USERNAME and
-                request.form.get("password") == PASSWORD):
+        if (request.form.get("username", "").lower() == USERNAME.lower() and
+                request.form.get("password", "").lower() == PASSWORD.lower()):
             session["logged_in"] = True
             return redirect(url_for("index"))
         error = "Invalid username or password."
