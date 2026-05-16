@@ -6,3 +6,5 @@ services:
       - "8080:8080"
     volumes:
       - ./mp3:/app/mp3:ro
+      - ./app/templates:/app/templates:ro
+      - ./app/static:/app/static:ro
