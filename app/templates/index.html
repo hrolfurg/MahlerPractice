@@ -71,6 +71,8 @@
       font-size: 0.85rem;
       color: #667;
     }
+    .track-table { table-layout: fixed; width: 100%; }
+    .track-table th, .track-table td { width: calc(100% / 6); }
     .track-table th {
       background: #16213e;
       color: #e2c97e;
@@ -192,10 +194,10 @@
       <thead>
         <tr>
           <th>Voice</th>
-          <th>Choir</th>
-          <th>Voice Type</th>
           <th>Part</th>
           <th>Section (bars)</th>
+          <th>Choir</th>
+          <th>Voice Type</th>
           <th>Play</th>
         </tr>
       </thead>
@@ -303,10 +305,10 @@ function render() {
     const colour = VOICE_COLOURS[t.voice] || "secondary";
     tr.innerHTML = `
       <td><span class="badge bg-${colour} badge-voice">${t.voice || "—"}</span></td>
-      <td>${t.choir || "—"}</td>
-      <td>${t.voice_type || "—"}</td>
       <td>${t.part || "—"}</td>
       <td>${t.section || "—"}</td>
+      <td>${t.choir || "—"}</td>
+      <td>${t.voice_type || "—"}</td>
       <td>
         <button class="btn btn-sm btn-outline-dark btn-play" data-file="${t.filename}"
                 data-label="${t.voice} · ${t.choir || '?'} · ${t.voice_type || t.part} · bars ${t.section}">
