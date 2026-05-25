@@ -336,6 +336,7 @@ document.getElementById("trackBody").addEventListener("click", e => {
 
   /* Load and play */
   player.src = `/mp3/${file}`;
+  player.playbackRate = parseFloat(localStorage.getItem("mahler_speed") || "1");
   nowPlaying.textContent = label;
   player.play();
 
